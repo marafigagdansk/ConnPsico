@@ -1,0 +1,94 @@
+BoxLayout:
+    orientation: "vertical"
+    padding: 10
+    size_hint: None, None
+    size: "350dp", "650dp"
+    pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+    Label:
+        text: "Cadastro"
+        font_size: 24
+        size_hint_y: None
+        height: "50dp"
+
+    GridLayout:
+        cols: 2
+        row_force_default: True
+        row_default_height: "40dp"
+        spacing: 10
+
+        Label:
+            text: "Nome do Usuário"
+            size_hint_y: None
+            height: "40dp"
+        TextInput:
+            id: input_nome
+            hint_text: "Informe seu nome"
+
+        Label:
+            text: "CPF"
+            size_hint_y: None
+            height: "40dp"
+        CPFFormattingTextInput:
+            id: input_cpf
+            input_type: 'number'
+            hint_text: "Informe seu CPF"
+
+        Label:
+            text: "Data de Nascimento"
+            size_hint_y: None
+            height: "40dp"
+        DataNascimentoFormattingTextInput:
+            id: input_data_nascimento
+            hint_text: "DD/MM/AAAA"
+
+        Label:
+            text: "Profissão"
+            size_hint_y: None
+            height: "40dp"
+        TextInput:
+            id: input_profissao
+            hint_text: "Informe sua profissão"
+
+        Label:
+            text: "Email"
+            size_hint_y: None
+            height: "40dp"
+        TextInput:
+            id: input_email
+            hint_text: "Informe seu email"
+            input_type: 'text'
+
+        Label:
+            text: "Senha"
+            size_hint_y: None
+            height: "40dp"
+        TextInput:
+            id: input_senha
+            hint_text: "Informe sua senha"
+            password: not check_mostrar_senha.active
+
+        Label:
+            text: "Mostrar Senha"
+            size_hint_y: None
+            height: "40dp"
+        BoxLayout:
+            orientation: "horizontal"
+            spacing: 10
+            CheckBox:
+                id: check_mostrar_senha
+                size_hint_y: None
+                height: "40dp"
+
+    Button:
+        text: "Cadastrar"
+        size_hint_y: None
+        height: "50dp"
+        on_press: app.cadastrar()
+
+    BoxLayout:
+        orientation: "horizontal"
+        size_hint_y: None
+        height: "50dp"
+        Button:
+            text: "Login"
